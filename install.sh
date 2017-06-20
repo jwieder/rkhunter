@@ -4,13 +4,13 @@
 # Author: Márk Sági-Kazár (sagikazarmark@gmail.com)
 # This script installs Rootkit Hunter on several Linux distributions.
 #
-# Version: 1.4.0
+# Version: 1.4.2
 
 # Variable definitions
 DIR=$(cd `dirname $0` && pwd)
 NAME="Rootkit Hunter"
 SLUG="rkhunter"
-VER="1.4.0"
+VER="1.4.2"
 DEPENDENCIES=("tar")
 TMP="/tmp/$SLUG"
 INSTALL_LOG="$TMP/install.log"
@@ -224,16 +224,16 @@ install_deps
 
 
 
-if [ -f $DIR/rkhunter-1.4.0.tar.gz ]; then
-	cp $DIR/rkhunter-1.4.0.tar.gz $TMP
+if [ -f $DIR/rkhunter-1.4.2.tar.gz ]; then
+	cp $DIR/rkhunter-1.4.2.tar.gz $TMP
 else
-	download http://ncu.dl.sourceforge.net/project/rkhunter/rkhunter/1.4.0/rkhunter-1.4.0.tar.gz "$NAME $VER files"
+	download http://ncu.dl.sourceforge.net/project/rkhunter/rkhunter/1.4.2/rkhunter-1.4.2.tar.gz "$NAME $VER files"
 fi
 
 e "Installing $NAME $VER"
 
-tar -xzf rkhunter-1.4.0.tar.gz >> $INSTALL_LOG 2>> $ERROR_LOG
-cd rkhunter-1.4.0
+tar -xzf rkhunter-1.4.2.tar.gz >> $INSTALL_LOG 2>> $ERROR_LOG
+cd rkhunter-1.4.2
 
 sh installer.sh --layout default --install >> $INSTALL_LOG 2>> $ERROR_LOG || ee "Installing $NAME $VER failed"
 
