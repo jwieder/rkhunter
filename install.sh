@@ -224,16 +224,16 @@ install_deps
 
 
 
-if [ -f $DIR/rkhunter-1.4.2.tar.gz ]; then
-	cp $DIR/rkhunter-1.4.2.tar.gz $TMP
+if [ -f $DIR/rkhunter-"$VER".tar.gz ]; then
+	cp $DIR/rkhunter-"$VER".tar.gz $TMP
 else
-	download http://ncu.dl.sourceforge.net/project/rkhunter/rkhunter/1.4.2/rkhunter-1.4.2.tar.gz "$NAME $VER files"
+	download http://ncu.dl.sourceforge.net/project/rkhunter/rkhunter/"$VER"/rkhunter-"$VER".tar.gz "$NAME $VER files"
 fi
 
 e "Installing $NAME $VER"
 
-tar -xzf rkhunter-1.4.2.tar.gz >> $INSTALL_LOG 2>> $ERROR_LOG
-cd rkhunter-1.4.2
+tar -xzf rkhunter-"$VER".tar.gz >> $INSTALL_LOG 2>> $ERROR_LOG
+cd rkhunter-"$VER"
 
 sh installer.sh --layout default --install >> $INSTALL_LOG 2>> $ERROR_LOG || ee "Installing $NAME $VER failed"
 
