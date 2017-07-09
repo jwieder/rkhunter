@@ -4,13 +4,13 @@
 # Author: Márk Sági-Kazár (sagikazarmark@gmail.com)
 # This script installs Rootkit Hunter on several Linux distributions.
 #
-# Version: 1.4.2
+# Version: 1.4.4
 
 # Variable definitions
 DIR=$(cd `dirname $0` && pwd)
 NAME="Rootkit Hunter"
 SLUG="rkhunter"
-VER="1.4.2"
+VER="1.4.4"
 DEPENDENCIES=("tar")
 TMP="/tmp/$SLUG"
 INSTALL_LOG="$TMP/install.log"
